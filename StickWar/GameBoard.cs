@@ -48,7 +48,7 @@ namespace StickWar
         {
             int i;
             Console.Clear();
-            Console.WriteLine("\n1-Peasant                                                                                         5-Peasant");
+            Console.WriteLine("\n1-Peasant                                       (cost: )                                        5-Peasant");
             Console.WriteLine("2-Tank                                                                                            6-Tank");
             Console.WriteLine("3-Miner                                                                                           7-Miner");
             Console.WriteLine("4-Healer                                                                                          8-Healer");
