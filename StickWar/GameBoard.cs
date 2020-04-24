@@ -48,10 +48,10 @@ namespace StickWar
         {
             int i;
             Console.Clear();
-            Console.WriteLine("\n1-Peasant                                       (cost: )                                        5-Peasant");
-            Console.WriteLine("2-Tank                                                                                            6-Tank");
-            Console.WriteLine("3-Miner                                                                                           7-Miner");
-            Console.WriteLine("4-Healer                                                                                          8-Healer");
+            Console.WriteLine("\n1-Peasant                                         (cost: 20)                                      5-Peasant");
+            Console.WriteLine("2-Tank                                            (cost: 50)                                      6-Tank");
+            Console.WriteLine("3-Miner                                           (cost: 80)                                      7-Miner");
+            Console.WriteLine("4-Healer                                          (cost: 50)                                      8-Healer");
             Console.WriteLine("\n===========================================================================================================");
             Console.WriteLine("\n===========================================================================================================\n");
             Console.ForegroundColor = ConsoleColor.Blue;//player 1 color
