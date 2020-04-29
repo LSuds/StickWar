@@ -6,7 +6,7 @@ namespace StickWar
 {
     class Program
     {
-        public static int TickCounter = 1500;
+        public const int TickCounter = 1500;
         static void Main()
         {
             GetPlayerNames();

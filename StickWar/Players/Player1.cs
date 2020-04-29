@@ -24,7 +24,7 @@ namespace StickWar
                 else
                     _health = value;
             }
-        }
+        }//Encapsulation
         public static int minerCount
         {
             get
@@ -42,7 +42,7 @@ namespace StickWar
                     _minerCount = value;
                 }
             }
-        }
+        }//Encapsulation
         public static int healerCount
         {
             get
@@ -60,7 +60,7 @@ namespace StickWar
                     _healerCount = value;
                 }
             }
-        }
+        }//Encapsulation
         public static string name;
         public static int money;
         static Player1()

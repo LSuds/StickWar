@@ -7,6 +7,10 @@ namespace StickWar
 {
     public static class GameBoard
     {
+        //*********************CONSTANTS***********************
+        private const double HealPerTick = .2;
+        private const int MinerGeneratePerTick = 5;
+
         private static Unit[] PlayingField = new Unit[10] {
             new Unit(),new Unit(),new Unit(),
             new Unit(),new Unit(),new Unit(),
@@ -22,8 +26,6 @@ namespace StickWar
         {
             new Miner(2),new Support(),new Support(), new Support()
         };
-        private static double HealPerTick = .2;
-        private static int MinerGeneratePerTick = 5;
 
         public static int ReDraw()
         {
@@ -34,6 +36,60 @@ namespace StickWar
             DrawField();
             return CheckWin();
         }
+        public static void AddUnit(Support newU)
+        {
+            if (newU.team == 1 && (Player1.money - newU.cost >= 0))
+            {
+                if (newU.isSupport && Player1.healerCount + Player1.minerCount < 4)
+                {
+                    Base1[Player1.healerCount + Player1.minerCount] = newU;
+                    Player1.money = Player1.money - newU.cost;
+                    if (newU.GetType() == typeof(Miner))
+                    {
+                        Player1.minerCount++;
+                    }
+                    else
+                        Player1.healerCount++;
+                    DrawField();
+                }
+            }
+            else if (newU.team == 2 && (Player2.money - newU.cost >= 0))
+            {
+                if (newU.isSupport && Player2.healerCount + Player2.minerCount < 4)
+                {
+                    Base2[Player2.healerCount + Player2.minerCount] = newU;
+                    Player2.money = Player2.money - newU.cost;
+                    if (newU.GetType() == typeof(Miner))
+                    {
+                        Player2.minerCount++;
+                    }
+                    else
+                        Player2.healerCount++;
+                    DrawField();
+                }
+            }
+        }//Polymorphism
+        public static void AddUnit(Unit newU)
+        {
+            if (newU.team == 1 && (Player1.money - newU.cost >= 0))
+            {
+                if (PlayingField[0].isNull)
+                {
+                    PlayingField[0] = newU;
+                    Player1.money = Player1.money - newU.cost;
+                    DrawField();
+                }
+            }
+            else if (newU.team == 2 && (Player2.money - newU.cost >= 0))
+            {
+                if (PlayingField[9].isNull)
+                {
+                    PlayingField[9] = newU;
+                    Player2.money = Player2.money - newU.cost;
+                    DrawField();
+                }
+            }
+        }//Polymorphism
         private static void GenerateHealth()
         {
             Player1.health = Player1.health + (decimal)(Player1.healerCount * HealPerTick);
@@ -283,59 +339,6 @@ namespace StickWar
                 return 0;
             }
         }
-        public static void AddUnit(Support newU)
-        {
-            if (newU.team == 1 && (Player1.money - newU.cost >= 0))
-            {
-                if (newU.isSupport && Player1.healerCount + Player1.minerCount < 4)
-                {
-                    Base1[Player1.healerCount + Player1.minerCount] = newU;
-                    Player1.money = Player1.money - newU.cost;
-                    if (newU.GetType() == typeof(Miner))
-                    {
-                        Player1.minerCount++;
-                    }
-                    else
-                        Player1.healerCount++;
-                    DrawField();
-                }
-            }
-            else if (newU.team == 2 && (Player2.money - newU.cost >= 0))
-            {
-                if (newU.isSupport && Player2.healerCount + Player2.minerCount < 4)
-                {
-                    Base2[Player2.healerCount + Player2.minerCount] = newU;
-                    Player2.money = Player2.money - newU.cost;
-                    if (newU.GetType() == typeof(Miner))
-                    {
-                        Player2.minerCount++;
-                    }
-                    else
-                        Player2.healerCount++;
-                    DrawField();
-                }
-            }
-        }
-        public static void AddUnit(Unit newU)
-        {
-            if (newU.team == 1 && (Player1.money - newU.cost >= 0))
-            {
-                if (PlayingField[0].isNull)
-                {
-                    PlayingField[0] = newU;
-                    Player1.money = Player1.money - newU.cost;
-                    DrawField();
-                }
-            }
-            else if (newU.team == 2 && (Player2.money - newU.cost >= 0))
-            {
-                if (PlayingField[9].isNull)
-                {
-                    PlayingField[9] = newU;
-                    Player2.money = Player2.money - newU.cost;
-                    DrawField();
-                }
-            }
-        }
+
     }
 }
