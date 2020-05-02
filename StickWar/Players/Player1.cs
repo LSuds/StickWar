@@ -71,6 +71,5 @@ namespace StickWar
             money = 50;
             name = "No Name";
         }
-
     }
 }
