@@ -17,9 +17,9 @@ namespace StickWar
             }
             set
             {
-                if (value >= 35)
+                if (value >= 100)
                 {
-                    _health = 35;
+                    _health = 100;
                 }
                 else
                     _health = value;
