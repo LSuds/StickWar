@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StickWar", "StickWar\StickWar.csproj", "{223C0F20-6770-42E3-9550-EAB86D0EA0D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit Tests", "Unit Tests\Unit Tests.csproj", "{B5CE950A-4C80-4048-8F17-CBCB562D1C96}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StickWarTests", "StickWarTests\StickWarTests.csproj", "{9414FB2A-9B11-4F8F-9269-9B75D4418A32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{223C0F20-6770-42E3-9550-EAB86D0EA0D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{223C0F20-6770-42E3-9550-EAB86D0EA0D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{223C0F20-6770-42E3-9550-EAB86D0EA0D8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B5CE950A-4C80-4048-8F17-CBCB562D1C96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B5CE950A-4C80-4048-8F17-CBCB562D1C96}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B5CE950A-4C80-4048-8F17-CBCB562D1C96}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B5CE950A-4C80-4048-8F17-CBCB562D1C96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9414FB2A-9B11-4F8F-9269-9B75D4418A32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9414FB2A-9B11-4F8F-9269-9B75D4418A32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9414FB2A-9B11-4F8F-9269-9B75D4418A32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9414FB2A-9B11-4F8F-9269-9B75D4418A32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,18 +11,18 @@ namespace StickWar
         private const double HealPerTick = .2;
         private const int MinerGeneratePerTick = 5;
 
-        private static Unit[] PlayingField = new Unit[10] {
+        public static Unit[] PlayingField = new Unit[10] {
             new Unit(),new Unit(),new Unit(),
             new Unit(),new Unit(),new Unit(),
             new Unit(),new Unit(),new Unit(),
             new Unit()};
 
-        private static Support[] Base1 = new Support[4]
+        public static Support[] Base1 = new Support[4]
         {
             new Miner(1),new Support(),new Support(), new Support()
         };
 
-        private static Support[] Base2 = new Support[4]
+        public static Support[] Base2 = new Support[4]
         {
             new Miner(2),new Support(),new Support(), new Support()
         };
@@ -103,7 +103,10 @@ namespace StickWar
         private static void DrawField()
         {
             int i;
-            Console.Clear();
+            if (!Console.IsOutputRedirected)
+            {
+                Console.Clear();
+            }
             Console.WriteLine("\n1-Peasant                                         (cost: 20)                                      5-Peasant");
             Console.WriteLine("2-Tank                                            (cost: 50)                                      6-Tank");
             Console.WriteLine("3-Miner                                           (cost: 80)                                      7-Miner");
@@ -178,7 +181,7 @@ namespace StickWar
 
             Console.WriteLine("\nMoney:" + Player1.money.ToString().PadRight(3, ' ') + "                                                                                   " + "Money:" + Player2.money.ToString().PadLeft(3, ' '));//players health
         }
-        internal static void CreateUnit(int input)
+        public static void CreateUnit(int input)
         {
             switch (input)
             {
