@@ -9,6 +9,9 @@ namespace StickWar
         private static decimal _health;
         private static int _minerCount;
         private static int _healerCount;
+        public static string name;
+        public static int money;
+
         public static decimal health
         {
             get
@@ -61,8 +64,7 @@ namespace StickWar
                 }
             }
         }//Encapsulation
-        public static string name;
-        public static int money;
+
         static Player1()
         {
             healerCount = 0;
